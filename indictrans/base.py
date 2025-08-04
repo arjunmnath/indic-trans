@@ -99,7 +99,7 @@ class BaseTransliterator(object):
             encoding='latin1',
             allow_pickle=True).astype(np.float64)
         # convert numpy.bytes_/numpy.string_ to numpy.unicode_
-        if not isinstance(self.classes_[0], np.unicode_):
+        if not isinstance(self.classes_[0], np.str_):
             self.classes_ = {k: v.decode('utf-8')
                              for k, v in self.classes_.items()}
 
